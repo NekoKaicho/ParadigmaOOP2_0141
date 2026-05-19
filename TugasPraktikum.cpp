@@ -41,3 +41,16 @@ public:
         }
     }
 };
+
+int main() {
+    RekeningBank* rekening[3];
+    rekening[0] = new RekeningSyariah(500000);
+    rekening[1] = new RekeningKonvensional(500000);
+    rekening[2] = new RekeningPremium(15000000);
+
+    for (int i = 0; i < 3; i++) {
+        rekening[i]->potongAdmin();
+    }
+
+    return 0;
+}
