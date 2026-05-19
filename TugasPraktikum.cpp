@@ -15,3 +15,14 @@ public:
         cout << "Rekening Syariah: tidak ada potongan, saldo tetap Rp " << saldo << endl;
     }
 };
+
+class RekeningKonvensional : public RekeningBank {
+private:
+    double saldo;
+public:
+    RekeningKonvensional(double saldo) : saldo(saldo) {}
+    void potongAdmin() {
+        saldo -= 15000;
+        cout << "Rekening Konvensional: saldo setelah potongan Rp " << saldo << endl;
+    }
+};
