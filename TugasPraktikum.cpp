@@ -26,3 +26,18 @@ public:
         cout << "Rekening Konvensional: saldo setelah potongan Rp " << saldo << endl;
     }
 };
+
+class RekeningPremium : public RekeningBank {
+private:
+    double saldo;
+public:
+    RekeningPremium(double saldo) : saldo(saldo) {}
+    void potongAdmin() {
+        if (saldo > 10000000) {
+            cout << "Rekening Premium: saldo di atas 10jt, bebas admin. Saldo Rp " << saldo << endl;
+        } else {
+            saldo -= 50000;
+            cout << "Rekening Premium: saldo dipotong Rp 50.000, saldo Rp " << saldo << endl;
+        }
+    }
+};
