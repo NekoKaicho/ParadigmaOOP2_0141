@@ -3,6 +3,7 @@ using namespace std;
 
 class RekeningBank {
 public:
+    virtual ~RekeningBank() {}
     virtual void potongAdmin() = 0;
 };
 
@@ -44,12 +45,18 @@ public:
 
 int main() {
     RekeningBank* rekening[3];
+
     rekening[0] = new RekeningSyariah(500000);
     rekening[1] = new RekeningKonvensional(500000);
     rekening[2] = new RekeningPremium(15000000);
 
+    cout << "--- Proses Otomatisasi Akhir Bulan ---" << endl;
     for (int i = 0; i < 3; i++) {
         rekening[i]->potongAdmin();
+    }
+
+    for (int i = 0; i < 3; i++) {
+        delete rekening[i];
     }
 
     return 0;
